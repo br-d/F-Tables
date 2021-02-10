@@ -1,4 +1,4 @@
 package com.example.f_tables.model
 
-class Task (title: String) {
+data class Task (val title: String) {
 }
