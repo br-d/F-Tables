@@ -2,6 +2,7 @@ package com.example.f_tables
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.f_tables.databinding.ActivityMainBinding
 import com.example.f_tables.model.Task
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         createNewTaskButton.setOnClickListener {
             val newTask = createNewTask(binding.newTaskTextField.text.toString())
+            Log.i("MainActivity", "Created new Task with title " + newTask.title)
         }
     }
 

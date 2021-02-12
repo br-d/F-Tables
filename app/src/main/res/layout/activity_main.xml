@@ -14,6 +14,7 @@
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/welcomeMessageValue"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/newTaskTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,11 +23,16 @@
         android:id="@+id/newTaskTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/newTaskTextFieldHint"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:hint="Add new task"
         android:textAlignment="center"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/createTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeMessage" />
@@ -35,21 +41,27 @@
         android:id="@+id/createTaskButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/newTaskTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newTaskTextField" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tasksContainer"
-        android:layout_width="411dp"
-        android:layout_height="539dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTaskButton"
-        android:scrollbars="vertical"
-        app:layoutManager="LinearLayoutManager" />
+        app:layout_constraintTop_toBottomOf="@+id/createTaskButton">
+
+        <LinearLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
