@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">F-Tables</string>
     <string name="welcomeMessageValue">Welcome to your main F-Table</string>
-    <string name="newTaskTextField">Add new task</string>
+    <string name="addNewTaskButtonValue">Add new task</string>
     <string name="newTaskTextFieldHint">Task summary</string>
+    <string name="addTaskHint">Add new task</string>
 </resources>
